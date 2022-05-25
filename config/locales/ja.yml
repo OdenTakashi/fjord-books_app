@@ -21,3 +21,9 @@ ja:
     submit:
       create: 登録する
       update: 更新する
+  views:
+      pagination:
+        first: '最初'
+        last: '最後'
+        previous: '前'
+        next: '次'
