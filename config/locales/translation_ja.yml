@@ -15,7 +15,10 @@ ja:
         email: メール
         password: パスワード
   log_in: ログイン
+  log_out: ログアウト
   sign_up: サインアップ
   forget_your_password?: パスワードをお忘れですか？
   characters_minimum: 文字以上
   send_me_reset_password_instructions: パスワードの再設定方法を送信する
+  edit_profile: プロフィール編集
+  logged_in_as: ログイン中のユーザー名
