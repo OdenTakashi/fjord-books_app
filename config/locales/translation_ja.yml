@@ -22,3 +22,10 @@ ja:
   send_me_reset_password_instructions: パスワードの再設定方法を送信する
   edit_profile: プロフィール編集
   logged_in_as: ログイン中のユーザー名
+  leave_blank_if_you_dont_want_to_change_it: (空欄のままなら変更しません)
+  we_need_your_current_password_to_confirm_your_changes: (変更を反映するには現在のパスワードを入力してください)
+  update: 更新
+  cancel_my_account: アカウント削除
+  unhappy: 気に入りません
+  back: 戻る
+
