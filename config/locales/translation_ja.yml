@@ -14,6 +14,7 @@ ja:
         remember_me: ログインを記憶する
         email: メール
         password: パスワード
+        current_password: 現在のパスワード
   log_in: ログイン
   log_out: ログアウト
   sign_up: サインアップ
@@ -28,4 +29,3 @@ ja:
   cancel_my_account: アカウント削除
   unhappy: 気に入りません
   back: 戻る
-
