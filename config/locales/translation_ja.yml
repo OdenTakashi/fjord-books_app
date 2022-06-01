@@ -10,9 +10,11 @@ ja:
         picture: 画像  #g
         title: 題名  #g
       user:
+        password_confirmation: パスワード（確認用）
         remember_me: ログインを記憶する
         email: メール
         password: パスワード
   log_in: ログイン
   sign_up: サインアップ
   forget_your_password?: パスワードをお忘れですか？
+  characters_minimum: 文字以上
