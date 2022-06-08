@@ -25,11 +25,9 @@
   <%= @user.self_introduction %>
 </p>
 
-<p>
   <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar.variant(resize: "100x100^") %>
+    <p><%= image_tag @user.avatar.variant(resize: "100x100") %></p>
   <% end %>
-</p>
 
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
