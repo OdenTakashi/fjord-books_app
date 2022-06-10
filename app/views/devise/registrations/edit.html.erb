@@ -26,6 +26,21 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div>
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %>
+  </div>
+
+  <div>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.label :selfintroduce %><br />
+    <%= f.text_area :selfintroduce %>
+  </div>
+
   <div class="field">
     <%= f.label :current_password %> <i><%= t(:we_need_your_current_password_to_confirm_your_changes)%></i><br />
     <%= f.password_field :current_password, autocomplete: "current_password" %>
