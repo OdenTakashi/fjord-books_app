@@ -1,5 +1,8 @@
 	<% @users.each do |user|%>
-		<p><%= link_to "#{user[:email]}", "/users/#{user[:id]}" %></p>
+		<%= user.email%>
+		<%= user.postcode %>
+		<%= user.address %>
+		<%= link_to "detail", "/users/#{user[:id]}" %>
 	<% end %>	
 
 	<%= paginate @users %>
