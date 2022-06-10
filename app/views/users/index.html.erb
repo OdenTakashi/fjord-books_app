@@ -2,7 +2,7 @@
 		<%= user.email%>
 		<%= user.postcode %>
 		<%= user.address %>
-		<%= link_to "detail", "/users/#{user[:id]}" %>
+		<%= link_to "#{t(:detail)}", "/users/#{user[:id]}" %>
 	<% end %>	
 
 	<%= paginate @users %>
