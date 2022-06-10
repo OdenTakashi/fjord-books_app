@@ -10,6 +10,9 @@ ja:
         picture: 画像  #g
         title: 題名  #g
       user:
+        address: 住所
+        postcode: 郵便番号
+        selfintroduce: 自己紹介
         password_confirmation: パスワード（確認用）
         remember_me: ログインを記憶する
         email: メール
@@ -29,3 +32,4 @@ ja:
   cancel_my_account: アカウント削除
   unhappy: 気に入りません
   back: 戻る
+  detail: 詳細
