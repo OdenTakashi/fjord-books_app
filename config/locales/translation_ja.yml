@@ -33,3 +33,11 @@ ja:
   unhappy: 気に入りません
   back: 戻る
   detail: 詳細
+  change_your_password: パスワードを変更する
+  new_password: 新しいパスワード
+  hello: こんにちは
+  someone_has_requested_a_link_to_change_your_password: 誰かがあなたのパスワードを変更するためのリンクを要求しました。
+  you_can_do_this_through_the_link_below: 以下から行えます。
+  if_you_didnt_request_this_please_ignore_this_email: リクエストしていない場合、このメールは無視してください。
+  your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: あなたが実際にリンクにアクセスしパスワードを変更するまでパスワードは変更されません。
+
