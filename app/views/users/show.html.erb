@@ -1,71 +1,20 @@
-<h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
-
-<% unless current_user.id == @user.id %>
-  <div id="follow_form">
-  <% if current_user.following?(@user) %>
-    <%= form_with(model: current_user.active_friendships.find_by(followed_id: @user.id),
-            html: { method: :delete }, local: true) do |f| %>
-      <%= f.submit "Unfollow", class: "btn btn-default" %>
-    <% end %>
-  <% else %>
-    <%= form_with(model: current_user.active_friendships.build, local: true) do |f| %>
-      <div><%= hidden_field_tag :followed_id, @user.id %></div>
-      <%= f.submit "Follow", class: "btn btn-primary" %>
-    <% end %>
-  <% end %>
-  </div>
-<% end %>
-
-<% @user ||= current_user %>
-<div class="stats">
-  <a href="<%= followings_user_path(@user) %>">
-    <strong id="following" class="stat">
-      <%= @user.followings.count %>
-    </strong>
-    followings
-  </a>
-  <a href="<%= followers_user_path(@user) %>">
-    <strong id="followers" class="stat">
-      <%= @user.followers.count %>
-    </strong>
-    followers
-  </a>
-</div>
-
 <p>
-  <strong><%= User.human_attribute_name(:email) %>:</strong>
-  <%= @user.email %>
+	<%= User.human_attribute_name(:email) %>:
+	<%= @user.email %>
 </p>
 
 <p>
-  <strong><%= User.human_attribute_name(:name) %>:</strong>
-  <%= @user.name %>
+	<%= User.human_attribute_name(:address) %>:
+	<%= @user.address%>
 </p>
 
 <p>
-  <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
-  <%= @user.postal_code %>
+	<%= User.human_attribute_name(:postcode) %>:
+	<%= @user.postcode %>
 </p>
 
 <p>
-  <strong><%= User.human_attribute_name(:address) %>:</strong>
-  <%= @user.address %>
+	<%= User.human_attribute_name(:selfintroduce) %>:
+	<%= @user.selfintroduce %>
 </p>
-
-<p>
-  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
-  <%= @user.self_introduction %>
-</p>
-
-<p>
-  <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-  <% if @user.avatar.attached? %>
-    <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
-  <% end %>
-</p>
-
-<% if current_user == @user %>
-  <%= link_to t('views.common.edit'), edit_user_registration_path %> |
-<% end %>
-<%= link_to t('views.common.back'), users_path %>
+<%= link_to '戻る', :back %>
