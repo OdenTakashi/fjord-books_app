@@ -1,6 +1,6 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
-<% unless current_user == @user %>
+<% unless current_user?(@user) %>
   <div id="follow_form">
   <% if current_user.following?(@user) %>
     <%= form_with(model: current_user.active_friendships.find_by(followed_id: @user.id),
