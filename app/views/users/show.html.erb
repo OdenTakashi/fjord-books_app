@@ -5,12 +5,12 @@
   <% if current_user.following?(@user) %>
     <%= form_with(model: current_user.active_friendships.find_by(followed_id: @user.id),
         html: { method: :delete }, local: true) do |f| %>
-      <%= f.submit "Unfollow" %>
+      <%= f.submit "#{t(:unfollow)}" %>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.active_friendships.build, local: true) do |f| %>
       <div><%= hidden_field_tag :followed_id, @user.id %></div>
-      <%= f.submit "Follow"%>
+      <%= f.submit "#{t(:follow)}"%>
     <% end %>
   <% end %>
   </div>
@@ -19,16 +19,16 @@
 <% @user ||= current_user %>
 <div>
   <a href="<%= followings_user_path(@user) %>">
-    <strong id="following" class="stat">
+    <strong>
       <%= @user.followings.count %>
     </strong>
-    followings
+    <%= t(:followings)%>
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong>
       <%= @user.followers.count %>
     </strong>
-    followers
+    <%= t(:followers)%>
   </a>
 </div>
 
