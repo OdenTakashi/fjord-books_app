@@ -1,9 +1,9 @@
 <h3><%= @title %></h3>
 <% @users.each do |user|%>
-	<th>
+  <li>
     <% if user.avatar.attached? %>
       <%= image_tag user.avatar.variant(resize_to_fill: [30, 30])%>
     <% end %>
-  </th>
-	<li><%= link_to user.name, user %></li>
+    <%= link_to user.name, user %>
+  </li>
 <% end %>
