@@ -14,7 +14,6 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.title %></td>
-        <td><%= report.context %></td>
         <td><%= link_to t('views.common.show'), report %></td>
         <td><%= link_to t('views.common.edit'), edit_report_path(report) %></td>
         <td><%= link_to t('views.common.destroy'), report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
