@@ -12,8 +12,16 @@
 
 <p>
   <strong><%= Report.human_attribute_name(:created_at) %>:</strong>
-  <%= l @report.created_at, format: :short %>
+  <%= l@report.created_at, formats: :short %>
 </p>
 
-<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<p>
+  <strong><%= t('reports.show.contributor') %>:</strong>
+  <%= @user.name %>
+</p>
+
+<% if @user == current_user %>  
+  <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% end %>
 <%= link_to t('views.common.back'), reports_path %>
