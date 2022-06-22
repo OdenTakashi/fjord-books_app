@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/create'
   resources :reports
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :users
@@ -11,5 +10,11 @@ Rails.application.routes.draw do
       resources :followings, only: [:index]
       resources :followers, only: [:index]
     end
+  end
+  resources :books do
+    resources :comments, controller: "books/comments"
+  end
+  resources :reports do
+    resources :comments, controller: "reports/comments"
   end
 end

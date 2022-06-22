@@ -22,3 +22,27 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+<h2><%= Comment.model_name.human%> <%= @comments.count %></h2>
+<% @comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= User.find(comment.user_id).name %>
+    <%= l comment.created_at, format: :short %>
+    <%= link_to t('views.common.destroy'), book_comment_path(@book.id, comment.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+  </li>
+<% end %>
+
+<h3><%= t('views.common.new') %></h3>
+
+<%= form_with model: [@book, Comment.new] do |form| %>
+  <div><%= hidden_field_tag :book_id, @book.id %></div>
+  <div>
+    <%= form.label :body%>
+    <%= form.text_area :body%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

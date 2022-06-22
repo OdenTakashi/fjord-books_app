@@ -1,3 +1,4 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,8 +21,34 @@
   <%= @user.name %>
 </p>
 
-<% if @user == current_user %>  
-  <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
-  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<div>
+  <% if @user == current_user %>  
+    <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+    <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+  <% end %>
+  <%= link_to t('views.common.back'), reports_path %>
+</div>
+
+<h2>コメント <%= @comments.count %> </h2> 
+<% @comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= User.find(comment.user_id).name %>
+    <%= l comment.created_at, format: :short %>
+    <%= link_to t('views.common.destroy'), report_comment_path(@report.id, comment.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+  </li>
 <% end %>
-<%= link_to t('views.common.back'), reports_path %>
+
+<h3><%= t('views.common.new') %></h3>
+
+<%= form_with model: [@report, Comment.new] do |form| %>
+  <div><%= hidden_field_tag :report_id, @report.id %></div>
+  <div>
+    <%= form.label :body%>
+    <%= form.text_area :body%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
