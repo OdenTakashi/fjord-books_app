@@ -8,7 +8,8 @@ class ReportsController < ApplicationController
 
   # GET /reports/1 or /reports/1.json
   def show
-    @user = User.find(@report.user_id)
+    # @user = User.find(@report.user_id)
+    @comments = @report.comments
   end
 
   # GET /reports/new
@@ -22,8 +23,7 @@ class ReportsController < ApplicationController
 
   # POST /reports or /reports.json
   def create
-    @report = Report.new(report_params)
-    @report.user_id = current_user.id
+    @report = current_user.reports.build(report_params)
 
     respond_to do |format|
       if @report.save
@@ -63,6 +63,7 @@ class ReportsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_report
       @report = Report.find(params[:id])
+      @user = User.find(@report.user_id)
     end
 
     # Only allow a list of trusted parameters through.
