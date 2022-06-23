@@ -29,7 +29,7 @@
     <%= comment.body %>
     <%= User.find(comment.user_id).name %>
     <%= l comment.created_at, format: :short %>
-    <%= link_to t('views.common.destroy'), book_comment_path(@book.id, comment.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+    <%= link_to t('views.common.destroy'), book_comment_path(@book, comment), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
   </li>
 <% end %>
 
