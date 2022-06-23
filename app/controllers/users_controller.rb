@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def followings
     @user  = User.find(params[:id])
-    @users = @user.followings
+    @users = @user.followings.with_attached_avatar.order(:id)
   end
 
   def followers
