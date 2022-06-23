@@ -3,8 +3,7 @@
 <% unless current_user?(@user) %>
   <div>
   <% if current_user.following?(@user) %>
-    <%= form_with(model: current_user.active_friendships.find_by(followed_id: @user.id),
-        html: { method: :delete }, local: true) do |f| %>
+    <%= form_with(model: @friendship, html: { method: :delete }, local: true) do |f| %>
       <%= f.submit t(:unfollow) %>
     <% end %>
   <% else %>
