@@ -18,7 +18,11 @@
 
 <p>
   <strong><%= t('reports.show.contributor') %>:</strong>
-  <%= @user.name %>
+  <% if @user.name.empty? %>
+    <%= @user.email %>
+  <% else %>
+    <%= @user.name %>
+  <% end %>
 </p>
 
 <div>
