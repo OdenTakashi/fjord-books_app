@@ -33,11 +33,19 @@
 <% @comments.each do |comment| %>
   <li>
     <%= comment.body %>
-    <%= comment.user.name %>
+
+    <% if comment.user.name.empty? %>
+      <%= comment.user.email%>
+    <% else %>
+      <%= comment.user.name %>
+    <% end %>
+
     <%= l comment.created_at, format: :short %>
+
     <% if comment.user == current_user %>
       <%= link_to t('views.common.destroy'), report_comment_path(@report, comment), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
     <% end %>
+
   </li>
 <% end %>
 
