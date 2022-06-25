@@ -107,6 +107,7 @@ ja:
       month: 月
       year: 年
   errors:
+    prohibited_this_report_from_being_saved: 個のエラーが原因でこの日報を保存できませんでした
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
