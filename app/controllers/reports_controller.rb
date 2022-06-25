@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @comments = @report.comments
+    @comments = @report.comments.includes(:user)
   end
 
   def new
