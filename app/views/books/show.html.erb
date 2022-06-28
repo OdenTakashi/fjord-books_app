@@ -41,7 +41,8 @@
 
 <h3><%= t('views.common.new') %></h3>
 
-<%= form_with model: [@book, Comment.new] do |form| %>
+<%= form_with(model: [@book, Comment.new], local: true) do |form| %>
+  <div><%= hidden_field_tag :book, @book %></div>
   <div>
     <%= form.label :body%>
     <%= form.text_area :body, required: true %>

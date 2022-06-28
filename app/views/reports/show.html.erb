@@ -47,7 +47,7 @@
 
 <h3><%= t('views.common.new') %></h3>
 
-<%= form_with model: [@report, Comment.new] do |form| %>
+<%= form_with(model: [@report, Comment.new], local: true) do |form| %>
   <div>
     <%= form.label :body%>
     <%= form.text_area :body, required: true %>
