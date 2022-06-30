@@ -11,3 +11,7 @@ she:
   name: 'sample'
   email: 'fuga@example.com'
   encrypted_password: 'password'
+
+odentakashi:
+  email: 'odentakashidesu@icloud.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Bokunaoki') %>
