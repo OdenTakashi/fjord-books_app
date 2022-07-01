@@ -1,15 +1,11 @@
-test:
+wakisaka:
   name: ' '
-  email: 'test@example.com'
-
-me:
-  name: 'test'
-  email: 'hoge@example.com'
+  email: 'wakisaka@example.com'
   encrypted_password: 'password'
 
-she:
-  name: 'sample'
-  email: 'fuga@example.com'
+naoki:
+  name: 'Naoki'
+  email: naoki@example.com
   encrypted_password: 'password'
 
 odentakashi:
