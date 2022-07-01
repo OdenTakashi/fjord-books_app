@@ -5,7 +5,7 @@ class Reports::CommentsController < ApplicationController
     @report = Report.find(params[:report_id])
     @comment = @report.comments.build(comment_params)
     @comment.user = current_user
-    @comment.save
+    @comment.save!
     redirect_to report_url(@report)
   end
 
