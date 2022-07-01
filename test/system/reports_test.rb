@@ -15,10 +15,10 @@ class ReportsTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit reports_url
     assert_selector 'h1', text: '日報'
-		assert_text @report.title
-		assert_text @report.user.email
-		assert_text @report.created_at.strftime('%Y/%m/%d')
-		assert_text '詳細'
+    assert_text @report.title
+    assert_text @report.user.email
+    assert_text @report.created_at.strftime('%Y/%m/%d')
+    assert_text '詳細'
   end
 
   test 'creating a Report' do
@@ -31,7 +31,7 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が作成されました'
     assert_text '今日の天気'
-		assert_text '猛暑だったよ〜'
+    assert_text '猛暑だったよ〜'
   end
 
   test 'updating a Report' do
@@ -44,7 +44,7 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が更新されました。'
     assert_text '今日の自分'
-		assert_text 'いい感じだったよ'
+    assert_text 'いい感じだったよ'
   end
 
   test 'destroying a Report' do
@@ -54,6 +54,6 @@ class ReportsTest < ApplicationSystemTestCase
     end
 
     assert_text '日報が削除されました。'
-		assert_nil Report.find_by(id: @report)
+    assert_nil Report.find_by(id: @report)
   end
 end
