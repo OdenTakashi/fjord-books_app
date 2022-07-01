@@ -4,7 +4,7 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:one)
+    @book = books(:Korean_training)
 
     visit root_url
     fill_in 'Eメール', with: 'odentakashidesu@icloud.com'
@@ -21,8 +21,8 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '新規作成'
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
+    fill_in 'タイトル', with: 'クドリャフカの順番'
+    fill_in 'メモ', with: 'おすすめ！'
     click_on '登録する'
 
     assert_text '本が作成されました'
