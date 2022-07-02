@@ -25,11 +25,7 @@
   <li>
     <%= comment.body %>
 
-    <% if comment.user.name.empty? %>
-      <%= comment.user.email%>
-    <% else %>
-      <%= comment.user.name %>
-    <% end %>
+  <%= comment.name_or_email %>
 
     <%= l comment.created_at, format: :short %>
 
