@@ -32,6 +32,6 @@ class User < ApplicationRecord
   end
 
   def name_or_email
-      user.name.empty? ? user.email : user.name
+    name.empty? ? email : name
   end
 end
