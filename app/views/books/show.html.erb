@@ -25,7 +25,7 @@
   <li>
     <%= comment.body %>
 
-  <%= comment.name_or_email %>
+  <%= comment.user.name_or_email %>
 
     <%= l comment.created_at, format: :short %>
 
