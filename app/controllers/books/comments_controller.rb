@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class Books::CommentsController < CommentsController
-
-  private 
+  private
 
   def set_resource
-		@resource = Book.find(params[:book_id])
-	end
+    @resource = Book.find(params[:book_id])
+  end
 end

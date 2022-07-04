@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-	before_action :set_resource
+  before_action :set_resource
 
   def create
     @comment = @resource.comments.build(comment_params)
@@ -22,8 +22,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body, :created_at)
   end
 
-	def set_resource
-		raise NotImplementedError.new("You must implement #{self.class}##{__method__}")
-	end
-
+  def set_resource
+    raise NotImplementedError, "You must implement #{self.class}##{__method__}"
+  end
 end
