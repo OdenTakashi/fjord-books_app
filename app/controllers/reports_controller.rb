@@ -48,6 +48,7 @@ class ReportsController < ApplicationController
   end
 
   def authenticated?
-    redirect @report unless @report.user == @user
+    head :unauthorized unless @report.user == @user
   end
+
 end
