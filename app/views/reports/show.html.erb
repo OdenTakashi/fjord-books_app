@@ -51,7 +51,7 @@
 <% end %>
 
 <div>
-  <% if @report.edit_permission(current_user) %>  
+  <% if @report.user == current_user %>  
     <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
     <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
   <% end %>
