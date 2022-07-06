@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :edit_permission, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(:id)
@@ -45,4 +46,9 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:title, :context, :created_at)
   end
+
+  def edit_permission
+    @report.user == @user
+  end
+
 end
