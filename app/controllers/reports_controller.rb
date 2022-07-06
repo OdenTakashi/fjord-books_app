@@ -50,5 +50,4 @@ class ReportsController < ApplicationController
   def authenticated?
     redirect @report unless @report.user == @user
   end
-
 end
