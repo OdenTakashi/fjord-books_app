@@ -18,11 +18,7 @@
 
 <p>
   <strong><%= t('reports.show.contributor') %>:</strong>
-  <% if @user.name.empty? %>
-    <%= @user.email %>
-  <% else %>
-    <%= @user.name %>
-  <% end %>
+  <%= @user.name_or_email %>
 </p>
 
 <h2>コメント <%= @comments.count %> </h2> 
