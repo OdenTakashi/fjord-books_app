@@ -10,10 +10,10 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test 'editable?' do
-    me = User.create!(name: 'Dave', email: 'dave@example.com', password: 'password')
-    you = User.create!(name: 'Bieber', email: 'bieber@example.com', password: 'password')
-    report = me.reports.create!(title: 'dinner', content: 'carry')
-    assert report.editable?(me)
-    assert_not report.editable?(you)
+    oden = users(:odentakashi)
+    naoki = users(:naoki)
+    report = reports(:oden_report)
+    assert report.editable?(oden)
+    assert_not report.editable?(naoki)
   end
 end
