@@ -4,10 +4,10 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:Korean_training)
+    @book = books(:korean_training)
 
     visit root_url
-    fill_in 'Eメール', with: 'odentakashidesu@icloud.com'
+    fill_in 'Eメール', with: 'odentakashidesu@example.com'
     fill_in 'パスワード', with: 'Bokunaoki'
     click_button 'ログイン'
   end
@@ -15,6 +15,7 @@ class BooksTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit books_url
     assert_selector 'h1', text: '本'
+    assert_text @book.title
   end
 
   test 'creating a Book' do
