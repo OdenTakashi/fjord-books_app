@@ -14,6 +14,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit books_url
+
     assert_selector 'h1', text: '本'
     assert_text 'ゼロからしっかり学べる韓国語'
     assert_text 'ためになるよ'
@@ -21,6 +22,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'creating a Book' do
     visit books_url
+
     click_on '新規作成'
 
     fill_in 'タイトル', with: 'クドリャフカの順番'
@@ -51,6 +53,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'destroying a Book' do
     visit books_url
+
     assert_text 'ゼロからしっかり学べる韓国語'
     assert_text 'ためになるよ'
 

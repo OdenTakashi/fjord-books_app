@@ -7,6 +7,7 @@ class ReportsTest < ApplicationSystemTestCase
     @report = reports(:oden_report)
 
     visit root_url
+
     fill_in 'Eメール', with: 'odentakashidesu@example.com'
     fill_in 'パスワード', with: 'Bokunaoki'
     click_button 'ログイン'
@@ -14,6 +15,7 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit reports_url
+
     assert_selector 'h1', text: '日報'
     assert_text '今日の夜ご飯'
     assert_text 'odentakashidesu@example.com'
@@ -23,6 +25,7 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'creating a Report' do
     visit reports_url
+
     click_on '新規作成'
 
     fill_in 'タイトル', with: '今日の天気'
@@ -36,7 +39,9 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'updating a Report' do
     visit reports_url
+
     assert_text '今日の夜ご飯'
+
     click_on '編集'
 
     fill_in 'タイトル', with: '今日の自分'
