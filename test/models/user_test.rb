@@ -30,6 +30,7 @@ class UserTest < ActiveSupport::TestCase
   test 'following?' do
     user_wakisaka = users(:wakisaka)
     user_naoki = users(:naoki)
+    assert_not user_wakisaka.following?(user_naoki)
     user_wakisaka.follow(user_naoki)
     assert user_wakisaka.following?(user_naoki)
   end
@@ -37,6 +38,7 @@ class UserTest < ActiveSupport::TestCase
   test 'followed_by?' do
     user_wakisaka = users(:wakisaka)
     user_naoki = users(:naoki)
+    assert_not user_naoki.followed_by?(user_wakisaka)
     user_wakisaka.follow(user_naoki)
     assert user_naoki.followed_by?(user_wakisaka)
   end
