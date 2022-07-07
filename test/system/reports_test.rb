@@ -36,6 +36,7 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'updating a Report' do
     visit reports_url
+    assert_text '今日の夜ご飯'
     click_on '編集'
 
     fill_in 'タイトル', with: '今日の自分'
@@ -49,11 +50,14 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'destroying a Report' do
     visit reports_url
+
+    assert_text '今日の夜ご飯'
+
     page.accept_confirm do
       click_on '削除', match: :first
     end
 
     assert_text '日報が削除されました。'
-    assert_nil Report.find_by(id: @report)
+    assert_not page.has_content?('今日の夜ご飯')
   end
 end
