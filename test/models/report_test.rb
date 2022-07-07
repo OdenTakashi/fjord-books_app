@@ -4,11 +4,9 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   test 'created_on' do
-    user = User.create!(name: 'Mike', email: 'mike@example.com', password: 'password')
-    travel_to Time.zone.local(2022, 6, 29) do
-      report = user.reports.create!(title: 'lunch', content: 'yakiniku')
-      assert_equal Time.zone.today, report.created_on
-    end
+    report = reports(:today_lunch)
+    report_created_at = "2022-07-07 14:52".in_time_zone
+    assert_equal "2022-07-07".to_date, report.created_on
   end
 
   test 'editable?' do
