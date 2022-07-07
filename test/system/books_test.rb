@@ -16,6 +16,7 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     assert_selector 'h1', text: '本'
     assert_text @book.title
+    assert_text @book.memo
   end
 
   test 'creating a Book' do
@@ -27,7 +28,8 @@ class BooksTest < ApplicationSystemTestCase
     click_on '登録する'
 
     assert_text '本が作成されました'
-    click_on '戻る'
+    assert_text 'クドリャフカの順番'
+    assert_text 'おすすめ！'
   end
 
   test 'updating a Book' do
@@ -39,7 +41,8 @@ class BooksTest < ApplicationSystemTestCase
     click_on '更新'
 
     assert_text '本が更新されました。'
-    click_on '戻る'
+    assert_text @book.title
+    assert_text @book.memo
   end
 
   test 'destroying a Book' do
