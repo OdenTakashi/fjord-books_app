@@ -11,33 +11,33 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'follow' do
-    me = users(:wakisaka)
-    he = users(:naoki)
-    assert_not me.following?(he)
-    me.follow(he)
-    assert me.following?(he)
+    user_wakisaka = users(:wakisaka)
+    user_naoki = users(:naoki)
+    assert_not user_wakisaka.following?(user_naoki)
+    user_wakisaka.follow(user_naoki)
+    assert user_wakisaka.following?(user_naoki)
   end
 
   test 'unfollow' do
-    me = users(:wakisaka)
-    he = users(:naoki)
-    me.follow(he)
-    assert me.following?(he)
-    me.unfollow(he)
-    assert_not me.following?(he)
+    user_wakisaka = users(:wakisaka)
+    user_naoki = users(:naoki)
+    user_wakisaka.follow(user_naoki)
+    assert user_wakisaka.following?(user_naoki)
+    user_wakisaka.unfollow(user_naoki)
+    assert_not user_wakisaka.following?(user_naoki)
   end
 
   test 'following?' do
-    me = users(:wakisaka)
-    he = users(:naoki)
-    me.follow(he)
-    assert me.following?(he)
+    user_wakisaka = users(:wakisaka)
+    user_naoki = users(:naoki)
+    user_wakisaka.follow(user_naoki)
+    assert user_wakisaka.following?(user_naoki)
   end
 
   test 'followed_by?' do
-    me = users(:wakisaka)
-    he = users(:naoki)
-    me.follow(he)
-    assert he.followed_by?(me)
+    user_wakisaka = users(:wakisaka)
+    user_naoki = users(:naoki)
+    user_wakisaka.follow(user_naoki)
+    assert user_naoki.followed_by?(user_wakisaka)
   end
 end
