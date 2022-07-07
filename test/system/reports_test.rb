@@ -4,10 +4,10 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:today_lunch)
+    @report = reports(:oden_report)
 
     visit root_url
-    fill_in 'Eメール', with: 'odentakashidesu@icloud.com'
+    fill_in 'Eメール', with: 'odentakashidesu@example.com'
     fill_in 'パスワード', with: 'Bokunaoki'
     click_button 'ログイン'
   end
