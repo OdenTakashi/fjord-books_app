@@ -1,13 +1,13 @@
 wakisaka:
   name: ' '
   email: 'wakisaka@example.com'
-  encrypted_password: 'password'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 naoki:
   name: 'Naoki'
   email: naoki@example.com
-  encrypted_password: 'password'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 odentakashi:
-  email: 'odentakashidesu@icloud.com'
+  email: 'odentakashidesu@example.com'
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Bokunaoki') %>
