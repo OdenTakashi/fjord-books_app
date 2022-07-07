@@ -15,8 +15,8 @@ class ReportsTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit reports_url
     assert_selector 'h1', text: '日報'
-    assert_text @report.title
-    assert_text @report.user.email
+    assert_text '今日の夜ご飯'
+    assert_text 'odentakashidesu@example.com'
     assert_text @report.created_at.strftime('%Y/%m/%d')
     assert_text '詳細'
   end
