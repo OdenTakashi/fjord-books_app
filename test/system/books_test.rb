@@ -15,8 +15,8 @@ class BooksTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit books_url
     assert_selector 'h1', text: '本'
-    assert_text @book.title
-    assert_text @book.memo
+    assert_text 'ゼロからしっかり学べる韓国語'
+    assert_text 'ためになるよ'
   end
 
   test 'creating a Book' do
@@ -34,23 +34,32 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'updating a Book' do
     visit books_url
+
+    assert_text 'ゼロからしっかり学べる韓国語'
+    assert_text 'ためになるよ'
+
     click_on '編集'
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
+    fill_in 'タイトル', with: '遠回りする雛'
+    fill_in 'メモ', with: 'めっちゃ面白いよ'
     click_on '更新'
 
     assert_text '本が更新されました。'
-    assert_text @book.title
-    assert_text @book.memo
+    assert_text '遠回りする雛'
+    assert_text 'めっちゃ面白いよ'
   end
 
   test 'destroying a Book' do
     visit books_url
+    assert_text 'ゼロからしっかり学べる韓国語'
+    assert_text 'ためになるよ'
+
     page.accept_confirm do
       click_on '削除', match: :first
     end
 
     assert_text '本が削除されました。'
+    assert_not page.has_content?('ゼロからしっかり学べる韓国語')
+    assert_not page.has_content?('ためになるよ')
   end
 end
