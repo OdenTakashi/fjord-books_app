@@ -4,42 +4,42 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'name_or_email' do
-    user_wakisaka = users(:wakisaka)
-    user_naoki = users(:naoki)
-    assert_equal 'wakisaka@example.com', user_wakisaka.name_or_email
-    assert_equal 'Naoki', user_naoki.name_or_email
+    wakisaka = users(:wakisaka)
+    naoki = users(:naoki)
+    assert_equal 'wakisaka@example.com', wakisaka.name_or_email
+    assert_equal 'Naoki', naoki.name_or_email
   end
 
   test 'follow' do
-    user_wakisaka = users(:wakisaka)
-    user_naoki = users(:naoki)
-    assert_not user_wakisaka.following?(user_naoki)
-    user_wakisaka.follow(user_naoki)
-    assert user_wakisaka.following?(user_naoki)
+    wakisaka = users(:wakisaka)
+    naoki = users(:naoki)
+    assert_not wakisaka.following?(naoki)
+    wakisaka.follow(naoki)
+    assert wakisaka.following?(naoki)
   end
 
   test 'unfollow' do
-    user_wakisaka = users(:wakisaka)
-    user_naoki = users(:naoki)
-    user_wakisaka.follow(user_naoki)
-    assert user_wakisaka.following?(user_naoki)
-    user_wakisaka.unfollow(user_naoki)
-    assert_not user_wakisaka.following?(user_naoki)
+    wakisaka = users(:wakisaka)
+    naoki = users(:naoki)
+    wakisaka.follow(naoki)
+    assert wakisaka.following?(naoki)
+    wakisaka.unfollow(naoki)
+    assert_not wakisaka.following?(naoki)
   end
 
   test 'following?' do
-    user_wakisaka = users(:wakisaka)
-    user_naoki = users(:naoki)
-    assert_not user_wakisaka.following?(user_naoki)
-    user_wakisaka.follow(user_naoki)
-    assert user_wakisaka.following?(user_naoki)
+    wakisaka = users(:wakisaka)
+    naoki = users(:naoki)
+    assert_not wakisaka.following?(naoki)
+    wakisaka.follow(naoki)
+    assert wakisaka.following?(naoki)
   end
 
   test 'followed_by?' do
-    user_wakisaka = users(:wakisaka)
-    user_naoki = users(:naoki)
-    assert_not user_naoki.followed_by?(user_wakisaka)
-    user_wakisaka.follow(user_naoki)
-    assert user_naoki.followed_by?(user_wakisaka)
+    wakisaka = users(:wakisaka)
+    naoki = users(:naoki)
+    assert_not naoki.followed_by?(wakisaka)
+    wakisaka.follow(naoki)
+    assert naoki.followed_by?(wakisaka)
   end
 end
