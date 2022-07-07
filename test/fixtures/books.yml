@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-Korean_training:
+korean_training:
   title: ゼロからしっかり学べる韓国語
   memo: ためになるよ
 
