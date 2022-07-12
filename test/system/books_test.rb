@@ -63,7 +63,7 @@ class BooksTest < ApplicationSystemTestCase
     end
 
     assert_text '本が削除されました。'
-    assert_no_text ('ゼロからしっかり学べる韓国語')
-    assert_no_text ('ためになるよ')
+    assert_no_text 'ゼロからしっかり学べる韓国語'
+    assert_no_text 'ためになるよ'
   end
 end

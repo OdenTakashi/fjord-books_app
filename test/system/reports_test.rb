@@ -63,6 +63,6 @@ class ReportsTest < ApplicationSystemTestCase
     end
 
     assert_text '日報が削除されました。'
-    assert_no_text ('今日の夜ご飯')
+    assert_no_text '今日の夜ご飯'
   end
 end
