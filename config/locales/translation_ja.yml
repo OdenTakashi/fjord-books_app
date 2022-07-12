@@ -2,10 +2,42 @@ ja:
   activerecord:
     models:
       book: 本  #g
-
+      user: ユーザー
     attributes:
       book:
         author: 著者  #g
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+      user:
+        address: 住所
+        postcode: 郵便番号
+        selfintroduce: 自己紹介
+        password_confirmation: パスワード（確認用）
+        remember_me: ログインを記憶する
+        email: メール
+        password: パスワード
+        current_password: 現在のパスワード
+  log_in: ログイン
+  log_out: ログアウト
+  sign_up: サインアップ
+  forget_your_password?: パスワードをお忘れですか？
+  characters_minimum: 文字以上
+  send_me_reset_password_instructions: パスワードの再設定方法を送信する
+  edit_profile: プロフィール編集
+  logged_in_as: ログイン中のユーザー名
+  leave_blank_if_you_dont_want_to_change_it: (空欄のままなら変更しません)
+  we_need_your_current_password_to_confirm_your_changes: (変更を反映するには現在のパスワードを入力してください)
+  update: 更新
+  cancel_my_account: アカウント削除
+  unhappy: 気に入りません
+  back: 戻る
+  detail: 詳細
+  change_your_password: パスワードを変更する
+  new_password: 新しいパスワード
+  hello: こんにちは
+  someone_has_requested_a_link_to_change_your_password: 誰かがあなたのパスワードを変更するためのリンクを要求しました。
+  you_can_do_this_through_the_link_below: 以下から行えます。
+  if_you_didnt_request_this_please_ignore_this_email: リクエストしていない場合、このメールは無視してください。
+  your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: あなたが実際にリンクにアクセスしパスワードを変更するまでパスワードは変更されません。
+
