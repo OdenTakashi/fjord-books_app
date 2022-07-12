@@ -20,5 +20,33 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<h2><%= Comment.model_name.human%> <%= @comments.count %></h2>
+<% @comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+
+  <%= comment.user.name_or_email %>
+
+    <%= l comment.created_at, format: :short %>
+
+    <% if comment.user == current_user %>
+      <%= link_to t('views.common.destroy'), book_comment_path(@book, comment), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+    <% end %>
+  </li>
+<% end %>
+
+<h3><%= t('views.common.new') %></h3>
+
+<%= form_with(model: [@book, Comment.new], local: true) do |form| %>
+  <div>
+    <%= form.label :body%>
+    <%= form.text_area :body, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
